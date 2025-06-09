@@ -3,7 +3,6 @@
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 
- 
 const Lottie = dynamic(() => import('../components/LottieAnimation'), { ssr: false });
 
 export default function Home() {
@@ -25,7 +24,6 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen bg-black overflow-hidden font-sans">
-  
       <div
         className={`absolute top-1/2 left-1/2 transition-transform ease-in-out ${
           activated ? 'pointer-events-none duration-700' : 'cursor-pointer duration-300'
@@ -43,25 +41,18 @@ export default function Home() {
       >
         <Lottie />
       </div>
- 
       <div
         className={`absolute top-1/2 left-1/2 transition-opacity transition-transform duration-700 ease-in-out ${activated ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         style={{ transform: heroTransform }}
       >
         <div className="relative z-10 max-w-xl text-center sm:text-left px-4">
-          <h1 className="text-4xl sm:text-6xl font-bold text-white mb-6 leading-tight">
-            Northeastern AI
+          <h1 className="text-6xl sm:text-8xl font-black tracking-tight text-white mb-6 leading-tight">
+            Northeastern <span className="text-primary-500">AI</span>
           </h1>
-          <p className="text-lg text-gray-300 mb-8">
-            Shaping the future of AI at Northeastern University, Boston.
+          <p className="text-base sm:text-xl text-gray-400 leading-relaxed mb-10 sm:max-w-none">
+            Shaping the future of AI at&nbsp;Northeastern University&nbsp;Boston.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
-            <button className="px-6 py-3 bg-white text-black rounded-full font-medium transition-colors hover:bg-gray-200">
-              Join the Club
-            </button>
-            <button className="px-6 py-3 border border-gray-500 text-white rounded-full font-medium hover:bg-gray-800 transition-colors">
-              Learn more
-            </button>
           </div>
         </div>
       </div>
